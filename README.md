@@ -3,7 +3,7 @@ Gestisce dispositivi arduino o raspberry connessi ad un server rest con un inter
 
 # Dispositivo
 	mac_address
-	descrizione ( Led, Porta, Lampadina…)
+	descrizione (Led, Porta, Lampadina…)
 	status (ON/OFF)
 	value (Stato complesso del dispositivo, rgb, gradi motore)
 

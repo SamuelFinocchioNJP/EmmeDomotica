@@ -15,3 +15,15 @@ body {
  .parallax-container {
        height: 12rem;
 }
+
+.side-spacing {
+    padding: 0 50px;
+}
+
+.card {
+    min-width: 300px !important;
+}
+
+main section {
+    margin-top: 50px;
+}

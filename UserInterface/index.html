@@ -35,7 +35,7 @@
 <body>
     <!-- Top side navigation bar -->
     <nav>
-        <div class="nav-wrapper light-blue lighten-1 navbar-fixed">
+        <div class="nav-wrapper light-blue lighten-1">
             <a class="brand-logo center">EmmeDomotica</a>
             <a href="#" class="button-collapse" data-activates="mobile-collapse" data-sidenav="left" data-menuwidth="250" data-closeonclick="true"><i class="material-icons">menu</i></a>
 
@@ -60,19 +60,99 @@
         <div class="parallax"><img src=".\images\parallax.jpg"></div>
     </div>
 
-    <main>
+    <main class="container-fluid">
 
+        <section class="row">
+            <div class="card medium col l4 s12 m6">
+                <div class="card-image waves-effect waves-block waves-light">
+                    <img class="activator" src=".\images\led.png">
+                </div>
+                <div class="card-content">
+                    <span class="card-title activator grey-text text-darken-4">Light LED<i class="material-icons right">more_vert</i></span>
+                    <div class="switch">
+                        <label>
+                            Off
+                            <input type="checkbox">
+                            <span class="lever"></span>
+                            On
+                        </label>
+                    </div>
+                </div>
+                <div class="card-reveal">
+                    <span class="card-title grey-text text-darken-4">Lampadina<i class="material-icons right">close</i></span>
+                    <p>
+                        <ul>
+                            <li>Mac address</li>
+                            <li>Status</li>
+                        </ul>
+
+                        <input type="color"  value="#ff0000" />
+                    </p>
+                </div>
+            </div>
+
+            <div class="card medium col l4 s12 m6">
+                <div class="card-image waves-effect waves-block waves-light">
+                    <img class="activator" src=".\images\door.jpg">
+                </div>
+                <div class="card-content">
+                    <span class="card-title activator grey-text text-darken-4">Porta<i class="material-icons right">more_vert</i></span>
+                    <div class="switch">
+                        <label>
+                            Closed
+                            <input type="checkbox">
+                            <span class="lever"></span>
+                            Open
+                        </label>
+                    </div>
+                </div>
+                <div class="card-reveal">
+                    <span class="card-title grey-text text-darken-4">Porta<i class="material-icons right">close</i></span>
+                    <p>
+                        <ul>
+                            <li>Mac address</li>
+                            <li>Status</li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+
+            <div class="card medium col l4 s12 m6">
+                <div class="card-image waves-effect waves-block waves-light">
+                    <img class="activator" src=".\images\bulb.jpg">
+                </div>
+                <div class="card-content">
+                    <span class="card-title activator grey-text text-darken-4">Luce<i class="material-icons right">more_vert</i></span>
+                    <div class="switch">
+                        <label>
+                            Off
+                            <input type="checkbox">
+                            <span class="lever"></span>
+                            On
+                        </label>
+                    </div>
+                </div>
+                <div class="card-reveal">
+                    <span class="card-title grey-text text-darken-4">Luce<i class="material-icons right">close</i></span>
+                    <p>
+                        <ul>
+                            <li>Mac address</li>
+                            <li>Status</li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+        </section>
     </main>
 
     <div class="parallax-container">
         <div class="parallax"><img src=".\images\parallax.jpg"></div>
     </div>
 
-
     <footer class="page-footer light-blue lighten-1">
         <div class="container">
             <div class="row">
-                <div class="col l6 s12">
+                <div class="col l6 s12 ">
                     <h5 class="white-text">EmmeDomotica</h5>
                     <p class="grey-text text-lighten-4">Gestisce dispositivi Arduino o Raspberry connessi ad un server rest con un interfaccia web.</p>
                 </div>

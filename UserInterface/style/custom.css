@@ -13,7 +13,7 @@ body {
  }
 
  .parallax-container {
-       height: 12rem;
+    height: 12rem;
 }
 
 .side-spacing {
@@ -26,4 +26,8 @@ body {
 
 main section {
     margin-top: 50px;
+}
+
+.border-transparent {
+    padding: 80px;
 }

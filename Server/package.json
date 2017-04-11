@@ -1,0 +1,28 @@
+{
+  "name": "emmedomotica",
+  "version": "1.0.0",
+  "description": "Gestisce dispositivi arduino o raspberry connessi ad un server rest con un interfaccia web",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Hi from Emmedomotica server\" && exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SamuelFinocchioNJP/EmmeDomotica.git"
+  },
+  "keywords": [
+    "domotica"
+  ],
+  "author": "SamuelFinocchioNJP",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SamuelFinocchioNJP/EmmeDomotica/issues"
+  },
+  "homepage": "https://github.com/SamuelFinocchioNJP/EmmeDomotica#readme",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "cors": "^2.8.3",
+    "express": "^4.15.2",
+    "mysql": "^2.13.0"
+  }
+}

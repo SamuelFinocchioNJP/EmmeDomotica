@@ -21,8 +21,14 @@
     <!-- Import: Custom css -->
     <link href=".\style\custom.css" type="text/css" rel="stylesheet"/>
 
+    <!-- Import: Angular JS -->
+    <script src=".\include\angular-1.6.4\angular.js"></script>
+
+    <!-- Import: Angular App -->
+    <script src=".\Javascript\app.js"></script>
+
     <script>
-    $( document ).ready(function(){
+    $(document).ready(function(){
         $(".button-collapse").sideNav();
     });
 
@@ -32,7 +38,7 @@
     </script>
 </head>
 
-<body>
+<body data-ng-app="EmmeDomotica" ng-cloak>
     <!-- Top side navigation bar -->
     <nav>
         <div class="nav-wrapper light-blue lighten-1">
@@ -60,94 +66,42 @@
         <div class="parallax"><img src=".\images\parallax.jpg"></div>
     </div>
 
-    <main class="container-fluid">
+    <main class="container-fluid" data-ng-controller="homeController">
         <section class="row">
-            <div class="border-transparent col l4 s12 m6">
-                <div class="card medium">
-                    <div class="card-image waves-effect waves-block waves-light">
-                        <img class="activator" src=".\images\led.png">
-                    </div>
-                    <div class="card-content">
-                        <span class="card-title activator grey-text text-darken-4">Light LED<i class="material-icons right">more_vert</i></span>
-                        <div class="switch">
-                            <label>
-                                Off
-                                <input type="checkbox">
-                                <span class="lever"></span>
-                                On
-                            </label>
+            <div data-ng-repeat="device in devices">
+                <!-- LED -->
+                <div class="border-transparent col l4 s12 m6">
+                    <div class="card medium">
+                        <div class="card-image waves-effect waves-block waves-light">
+                            <img class="activator" src=".\images\{{device.descrizione}}.jpg">
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title activator grey-text text-darken-4">{{device.descrizione | capitalize}}<i class="material-icons right">more_vert</i></span>
+                            <div class="switch">
+                                <label>
+                                    Off
+                                    <input type="checkbox" data-ng-model="device.status">
+                                    <span class="lever"></span>
+                                    On
+                                </label>
+                            </div>
+
+                        </div>
+                        <div class="card-reveal">
+                            <span class="card-title grey-text text-darken-4">{{device.descrizione | capitalize}}<i class="material-icons right">close</i></span>
+                            <p>
+                                <ul>
+                                    <li>Mac address: {{device.mac_address}} </li>
+                                    <li>Status: {{device.status == 1 ? 'On' : 'Off'}} </li>
+                                </ul>
+                                <input data-ng-if="device.descrizione=='led'" data-ng-model="device.char_value" type="color" />
+                                <input data-ng-if="device.descrizione=='bulb'" type="range" data-ng-model="device.number_value">
+                            </p>
                         </div>
                     </div>
-                    <div class="card-reveal">
-                        <span class="card-title grey-text text-darken-4">Lampadina<i class="material-icons right">close</i></span>
-                        <p>
-                            <ul>
-                                <li>Mac address</li>
-                                <li>Status</li>
-                            </ul>
-
-                            <input type="color"  value="#ff0000" />
-                        </p>
-                    </div>
                 </div>
+                <!-- /LED -->
             </div>
-
-            <div class="border-transparent col l4 s12 m6">
-                <div class="card medium">
-                    <div class="card-image waves-effect waves-block waves-light">
-                        <img class="activator" src=".\images\door.jpg">
-                    </div>
-                    <div class="card-content">
-                        <span class="card-title activator grey-text text-darken-4">Porta<i class="material-icons right">more_vert</i></span>
-                        <div class="switch">
-                            <label>
-                                Closed
-                                <input type="checkbox">
-                                <span class="lever"></span>
-                                Open
-                            </label>
-                        </div>
-                    </div>
-                    <div class="card-reveal">
-                        <span class="card-title grey-text text-darken-4">Porta<i class="material-icons right">close</i></span>
-                        <p>
-                            <ul>
-                                <li>Mac address</li>
-                                <li>Status</li>
-                            </ul>
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="border-transparent col l4 s12 m6">
-                <div class="card medium">
-                    <div class="card-image waves-effect waves-block waves-light">
-                        <img class="activator" src=".\images\bulb.jpg">
-                    </div>
-                    <div class="card-content">
-                        <span class="card-title activator grey-text text-darken-4">Luce<i class="material-icons right">more_vert</i></span>
-                        <div class="switch">
-                            <label>
-                                Off
-                                <input type="checkbox">
-                                <span class="lever"></span>
-                                On
-                            </label>
-                        </div>
-                    </div>
-                    <div class="card-reveal">
-                        <span class="card-title grey-text text-darken-4">Luce<i class="material-icons right">close</i></span>
-                        <p>
-                            <ul>
-                                <li>Mac address</li>
-                                <li>Status</li>
-                            </ul>
-                        </p>
-                    </div>
-                </div>
-            </div>
-
         </section>
     </main>
 
